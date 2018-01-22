@@ -10,7 +10,7 @@ public class GerenciamentoMesas {
 	private IRepositorioMesas mesas = RepositorioMesas.getInstance();
 	
 	public void cadastrarMesa(Mesa a) {
-		if (a != null && !existe(a)){
+		if (a != null && !existe(a.getId())){
 			mesas.adicionarMesa(a);
 		}
 	}
