@@ -14,7 +14,7 @@ public class Tela_MenuCozinheiroController {
 		//TODO
 	}
 	@FXML public void adicionarNovoItem(){
-		//TODO
+		ScreenManager.setScene(ScreenManager.getInstance().getTelaAdicionarItem());
 	}
 	@FXML public void voltarParaLogin(){
 		ScreenManager.setScene(ScreenManager.getInstance().getTelaLogin());

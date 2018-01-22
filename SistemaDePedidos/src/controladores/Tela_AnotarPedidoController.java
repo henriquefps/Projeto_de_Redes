@@ -44,7 +44,7 @@ public class Tela_AnotarPedidoController implements Initializable {
 	@FXML
 	private TextArea itensTextArea;
 
-	private ArrayList<Item> itensDoPedido;
+	private ArrayList<Item> itensDoPedido = null;
 	private Prato pratoSelecionado = null;
 	private Bebida bebidaSelecionada = null;
 

@@ -4,6 +4,7 @@ import beans.Bebida;
 import beans.Prato;
 import fachada.Fachada;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class Tela_AdicionarItemController {
@@ -11,7 +12,7 @@ public class Tela_AdicionarItemController {
 	@FXML
 	private TextField nomePratoTextField;
 	@FXML
-	private TextField descricaoPratoTextArea;
+	private TextArea descricaoPratoTextArea;
 	@FXML
 	private TextField valorPratoTextField;
 	@FXML
