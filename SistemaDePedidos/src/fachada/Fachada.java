@@ -16,12 +16,29 @@ import gerenciamento.GerenciamentoMesas;
 import gerenciamento.GerenciamentoPedidos;
 
 public class Fachada {
+	
+	private static Fachada instance;
 
 	private GerenciamentoFuncionarios funcionarios = new GerenciamentoFuncionarios();
 	private GerenciamentoItens itens = new GerenciamentoItens();
 	private GerenciamentoMesas mesas = new GerenciamentoMesas();
 	private GerenciamentoPedidos pedidos = new GerenciamentoPedidos();
 	
+	private Fachada(){
+		
+	}
+	
+	
+	
+	public static Fachada getInstance() {
+		if(instance == null){
+			instance = new Fachada();
+		}
+		return instance;
+	}
+
+
+
 	public void cadastrarGarcom(Garcom a){
 		funcionarios.cadastrarGarcom(a);
 	}
@@ -90,8 +107,12 @@ public class Fachada {
 		return mesas.listarMesas();
 	}
 	
-	public boolean existe(Mesa a){
-		return mesas.existe(a);
+	public Mesa buscarMesa(int id){
+		return mesas.buscarMesa(id);
+	}
+	
+	public boolean existe(int id){
+		return mesas.existe(id);
 	}
 	
 	public void cadastrarPedido(Pedido a){

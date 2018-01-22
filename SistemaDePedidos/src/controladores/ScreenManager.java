@@ -1,4 +1,4 @@
-package controladores.programa;
+package controladores;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,8 +12,6 @@ public class ScreenManager {
 	private Scene telaContasPorMesa;
 	private Scene telaMenuCozinheiro;
 	private Scene telaMenuGarcom;
-	private Scene telaID_Cozinheiro;
-	private Scene telaID_Garcom;
 
 	private static Stage mainStage;
 
@@ -45,7 +43,7 @@ public class ScreenManager {
 
 	public Scene getTelaLogin() {
 		try {
-			telaLogin = new Scene(FXMLLoader.load(getClass().getResource("/graficos/Tela_Login.fxml")), 1280, 720);
+			telaLogin = new Scene(FXMLLoader.load(getClass().getResource("/grafico/Tela_Identificacao.fxml")), 1280, 720);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -54,7 +52,8 @@ public class ScreenManager {
 
 	public Scene getTelaAdicionarItem() {
 		try {
-			telaAdicionarItem = new Scene(FXMLLoader.load(getClass().getResource("/graficos/Tela_AdicionarItem.fxml")), 1280, 720);
+			telaAdicionarItem = new Scene(FXMLLoader.load(getClass().getResource("/grafico/Tela_AdicionarItem.fxml")),
+					1280, 720);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -63,7 +62,8 @@ public class ScreenManager {
 
 	public Scene getTelaAnotarPedido() {
 		try {
-			telaAnotarPedido = new Scene(FXMLLoader.load(getClass().getResource("/graficos/Tela_AnotarPedido.fxml")), 1280, 720);
+			telaAnotarPedido = new Scene(FXMLLoader.load(getClass().getResource("/grafico/Tela_AnotarPedido.fxml")),
+					1280, 720);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -72,18 +72,18 @@ public class ScreenManager {
 
 	public Scene getTelaContasPorMesa() {
 		try {
-			telaContasPorMesa = new Scene(FXMLLoader.load(getClass().getResource("/graficos/Tela_ContasPorMesa.fxml")), 1280, 720);
+			telaContasPorMesa = new Scene(FXMLLoader.load(getClass().getResource("/grafico/Tela_ContasPorMesa.fxml")),
+					1280, 720);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return telaContasPorMesa;
 	}
 
-	
-
 	public Scene getTelaMenuCozinheiro() {
 		try {
-			telaMenuCozinheiro = new Scene(FXMLLoader.load(getClass().getResource("/graficos/Tela_MenuCozinheiro.fxml")), 1280, 720);
+			telaMenuCozinheiro = new Scene(
+					FXMLLoader.load(getClass().getResource("/grafico/Tela_MenuCozinheiro.fxml")), 1280, 720);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -92,29 +92,12 @@ public class ScreenManager {
 
 	public Scene getTelaMenuGarcom() {
 		try {
-			telaMenuGarcom = new Scene(FXMLLoader.load(getClass().getResource("/graficos/Tela_MenuGarcom.fxml")), 1280, 720);
+			telaMenuGarcom = new Scene(FXMLLoader.load(getClass().getResource("/grafico/Tela_MenuGarcom.fxml")), 1280,
+					720);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return telaMenuGarcom;
-	}
-
-	public Scene getTelaID_Cozinheiro() {
-		try {
-			telaID_Cozinheiro = new Scene(FXMLLoader.load(getClass().getResource("/graficos/TelaID_Cozinheiro.fxml")), 1280, 720);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return telaID_Cozinheiro;
-	}
-
-	public Scene getTelaID_Garcom() {
-		try {
-			telaID_Garcom = new Scene(FXMLLoader.load(getClass().getResource("/graficos/TelaID_Garcom.fxml")), 1280, 720);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return telaID_Garcom;
 	}
 
 }

@@ -1,53 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.Tela_AnotarPedidoController">
    <children>
       <Label layoutX="41.0" layoutY="27.0" text="Anotar Pedido">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="149.0" text="Mesa:">
+      <Label layoutX="107.0" layoutY="127.0" text="Mesa:">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField layoutX="166.0" layoutY="161.0" />
-      <TextArea layoutX="35.0" layoutY="344.0" prefHeight="229.0" prefWidth="434.0" promptText="Itens">
+      <TextField fx:id="idMesaTextField" layoutX="227.0" layoutY="139.0" promptText="Número da Mesa" />
+      <TextArea fx:id="itensTextArea" layoutX="270.0" layoutY="496.0" prefHeight="131.0" prefWidth="199.0" promptText="Itens" wrapText="true">
          <font>
             <Font size="24.0" />
          </font>
       </TextArea>
-      <ChoiceBox layoutX="167.0" layoutY="214.0" prefWidth="150.0" />
-      <Label layoutX="46.0" layoutY="201.0" text="Prato:">
+      <Label layoutX="82.0" layoutY="201.0" text="Prato">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="254.0" text="Bebida:">
+      <Label layoutX="310.0" layoutY="201.0" text="Bebida">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="192.0" layoutY="266.0" prefWidth="150.0" />
-      <Button layoutX="302.0" layoutY="653.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="161.0" text="Finalizar Pedido">
+      <Button layoutX="289.0" layoutY="648.0" mnemonicParsing="false" onAction="#finalizarPedido" prefHeight="40.0" prefWidth="161.0" text="Finalizar Pedido">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="38.0" layoutY="653.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="173.0" text="Cancelar Pedido">
+      <Button layoutX="41.0" layoutY="648.0" mnemonicParsing="false" onAction="#cancelarPedido" prefHeight="40.0" prefWidth="173.0" text="Cancelar Pedido">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <Button layoutX="50.0" layoutY="441.0" mnemonicParsing="false" onAction="#adicionarPrato" text="Adicionar Prato">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="286.0" layoutY="441.0" mnemonicParsing="false" onAction="#adicionarBebida" text="Adicionar Bebida">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="pratosTableView" layoutX="29.0" layoutY="243.0" prefHeight="180.0" prefWidth="208.0">
+        <columns>
+          <TableColumn fx:id="colunaPratoNome" prefWidth="103.0" text="Nome" />
+          <TableColumn fx:id="colunaPratoValor" prefWidth="104.0" text="Valor" />
+        </columns>
+      </TableView>
+      <TableView fx:id="bebidasTableView" layoutX="265.0" layoutY="243.0" prefHeight="180.0" prefWidth="208.0">
+         <columns>
+            <TableColumn fx:id="colunaBebidaNome" prefWidth="100.0" text="Nome" />
+            <TableColumn fx:id="colunaBebidaValor" prefWidth="107.0" text="Valor" />
+         </columns>
+      </TableView>
+      <TextArea fx:id="descricaoTextArea" layoutX="34.0" layoutY="496.0" prefHeight="131.0" prefWidth="199.0" promptText="Descrição" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextArea>
    </children>
 </AnchorPane>

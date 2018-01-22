@@ -25,9 +25,19 @@ public class GerenciamentoMesas {
 		return mesas.getListaDeMesas();
 	}
 	
-	public boolean existe(Mesa a){
+	public Mesa buscarMesa(int id){
+		Mesa procurado = null;
 		for (int i = 0; i < listarMesas().size(); i++) {
-			if (listarMesas().get(i).getId() == a.getId()) {
+			if (listarMesas().get(i).getId() == id) {
+				procurado = listarMesas().get(i);
+			}
+		}
+		return procurado;
+	}
+	
+	public boolean existe(int id){
+		for (int i = 0; i < listarMesas().size(); i++) {
+			if (listarMesas().get(i).getId() == id) {
 				return true;
 			}
 		}

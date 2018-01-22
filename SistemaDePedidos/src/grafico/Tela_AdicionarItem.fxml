@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SistemaDePedidos.src.usuario.Tela_Identificacao_controller.java">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.Tela_AdicionarItemController">
    <children>
       <Label layoutX="434.0" layoutY="28.0" text="Adicionar Item">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
-      <Button layoutX="1119.0" layoutY="36.0" mnemonicParsing="false" text="Sair">
+      <Button layoutX="1119.0" layoutY="36.0" mnemonicParsing="false" onAction="#voltarParaMenuCozinheiro" text="Sair">
          <font>
             <Font size="36.0" />
          </font>
@@ -49,10 +49,10 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextArea layoutX="285.0" layoutY="319.0" prefHeight="93.0" prefWidth="204.0" />
-      <TextField layoutX="242.0" layoutY="272.0" prefHeight="25.0" prefWidth="247.0" />
-      <TextField layoutX="234.0" layoutY="428.0" prefHeight="25.0" prefWidth="255.0" />
-      <TextField layoutX="325.0" layoutY="472.0" prefHeight="25.0" prefWidth="164.0" />
+      <TextArea fx:id="descricaoPratoTextArea" layoutX="285.0" layoutY="319.0" prefHeight="93.0" prefWidth="204.0" promptText="Descrição do Prato" wrapText="true" />
+      <TextField fx:id="nomePratoTextField" layoutX="242.0" layoutY="272.0" prefHeight="25.0" prefWidth="247.0" promptText="Nome do Prato" />
+      <TextField fx:id="valorPratoTextField" layoutX="234.0" layoutY="428.0" prefHeight="25.0" prefWidth="255.0" promptText="Valor do Prato" />
+      <TextField fx:id="nPessoasTextField" layoutX="345.0" layoutY="472.0" prefHeight="27.0" prefWidth="144.0" promptText="Numero de pessoas" />
       <Label layoutX="758.0" layoutY="270.0" text="Nome:">
          <font>
             <Font size="24.0" />
@@ -63,20 +63,20 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="838.0" layoutY="275.0" prefHeight="25.0" prefWidth="247.0" />
-      <TextField layoutX="830.0" layoutY="363.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="nomeBebidaTextField" layoutX="838.0" layoutY="275.0" prefHeight="25.0" prefWidth="247.0" promptText="Nome da Bebida" />
+      <TextField fx:id="valorBebidaTextField" layoutX="830.0" layoutY="363.0" prefHeight="25.0" prefWidth="255.0" promptText="Valor da Bebida" />
       <Label layoutX="758.0" layoutY="315.0" text="Tamanho: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="872.0" layoutY="320.0" prefHeight="25.0" prefWidth="213.0" />
-      <Button layoutX="265.0" layoutY="529.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="139.0" text="Adicionar">
+      <TextField fx:id="tamanhoBebidaTextField" layoutX="872.0" layoutY="320.0" prefHeight="25.0" prefWidth="213.0" promptText="Valor do Tamanho + UNT" />
+      <Button layoutX="211.0" layoutY="519.0" mnemonicParsing="false" onAction="#adicionarPrato" prefHeight="51.0" prefWidth="210.0" text="Adicionar Prato">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="888.0" layoutY="415.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="139.0" text="Adicionar">
+      <Button layoutX="838.0" layoutY="412.0" mnemonicParsing="false" onAction="#adicionarBebida" prefHeight="51.0" prefWidth="227.0" text="Adicionar Bebida">
          <font>
             <Font size="24.0" />
          </font>

@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SistemaDePedidos.src.usuario.Tela_Identificacao_controller.java">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.Tela_MenuCozinheiroController">
    <children>
-      <TableView layoutX="85.0" layoutY="158.0" prefHeight="519.0" prefWidth="694.0">
+      <TableView fx:id="tabelaPedidos" layoutX="85.0" layoutY="158.0" prefHeight="519.0" prefWidth="694.0">
         <columns>
-          <TableColumn prefWidth="464.1324234008789" text="Nome do Item" />
-          <TableColumn prefWidth="229.86753845214844" text="ID Item" />
+          <TableColumn fx:id="colunaNomeItem" prefWidth="464.1324234008789" text="Nome do Item" />
+          <TableColumn fx:id="colunaIdItem" prefWidth="229.86753845214844" text="ID Item" />
         </columns>
       </TableView>
       <Label layoutX="389.0" layoutY="28.0" text="Menu Cozinheiro">
@@ -20,17 +20,17 @@
             <Font size="64.0" />
          </font>
       </Label>
-      <Button layoutX="826.0" layoutY="261.0" mnemonicParsing="false" text="Marcar Como Pronto">
+      <Button layoutX="826.0" layoutY="261.0" mnemonicParsing="false" onAction="#marcarComoPronto" text="Marcar Como Pronto">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Button layoutX="1119.0" layoutY="36.0" mnemonicParsing="false" text="Sair">
+      <Button layoutX="1119.0" layoutY="36.0" mnemonicParsing="false" onAction="#voltarParaLogin" text="Sair">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Button layoutX="877.0" layoutY="391.0" mnemonicParsing="false" text="Adicionar Item">
+      <Button layoutX="877.0" layoutY="391.0" mnemonicParsing="false" onAction="#adicionarNovoItem" text="Adicionar Item">
          <font>
             <Font size="36.0" />
          </font>
