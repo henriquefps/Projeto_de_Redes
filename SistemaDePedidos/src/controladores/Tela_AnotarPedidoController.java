@@ -60,6 +60,8 @@ public class Tela_AnotarPedidoController implements Initializable {
 			itensDoPedido.add(pratoSelecionado);
 			itens = itens + "- " + pratoSelecionado.getNome() + "\n";
 			itensTextArea.setText(itens);
+			System.out.println(itens);
+			System.out.println(itensDoPedido == null);
 		}
 	}
 
@@ -148,6 +150,7 @@ public class Tela_AnotarPedidoController implements Initializable {
 	public void selecionarPrato() {
 		pratoSelecionado = pratosTableView.getSelectionModel().getSelectedItem();
 		if (pratoSelecionado != null) {
+			System.out.println(pratoSelecionado.getDescricao());
 			descricaoTextArea.setText(
 					pratoSelecionado.getDescricao() + "\nServe Pessoas: " + pratoSelecionado.getServeNPessoas());
 		}
