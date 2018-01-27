@@ -3,14 +3,15 @@ package gerenciamento;
 import java.util.ArrayList;
 
 import beans.Mesa;
+import beans.Pedido;
 import interfaces.IRepositorioMesas;
 import repositorios.RepositorioMesas;
 
 public class GerenciamentoMesas {
 	private IRepositorioMesas mesas = RepositorioMesas.getInstance();
-	
+
 	public void cadastrarMesa(Mesa a) {
-		if (a != null && !existe(a.getId())){
+		if (a != null && !existe(a.getId())) {
 			mesas.adicionarMesa(a);
 		}
 	}
@@ -20,12 +21,12 @@ public class GerenciamentoMesas {
 			mesas.removerMesa(a);
 		}
 	}
-	
-	public ArrayList<Mesa> listarMesas(){
+
+	public ArrayList<Mesa> listarMesas() {
 		return mesas.getListaDeMesas();
 	}
-	
-	public Mesa buscarMesa(int id){
+
+	public Mesa buscarMesa(int id) {
 		Mesa procurado = null;
 		for (int i = 0; i < listarMesas().size(); i++) {
 			if (listarMesas().get(i).getId() == id) {
@@ -34,8 +35,8 @@ public class GerenciamentoMesas {
 		}
 		return procurado;
 	}
-	
-	public boolean existe(int id){
+
+	public boolean existe(int id) {
 		for (int i = 0; i < listarMesas().size(); i++) {
 			if (listarMesas().get(i).getId() == id) {
 				return true;
@@ -43,6 +44,15 @@ public class GerenciamentoMesas {
 		}
 		return false;
 	}
-	
-	
+
+	public double calcularConta(ArrayList<Pedido> pedidos) {
+		double valorTotal = 0;
+		for (int i = 0; i < pedidos.size(); i++) {
+			for (int j = 0; j < pedidos.get(i).getItens().size(); j++) {
+				valorTotal += pedidos.get(i).getItens().get(j).getValor();
+			}
+		}
+		return valorTotal;
+	}
+
 }

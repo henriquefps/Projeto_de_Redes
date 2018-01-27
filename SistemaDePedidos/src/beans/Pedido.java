@@ -7,10 +7,12 @@ public class Pedido{
 	private int id;
 	private ArrayList<Item> itens;
 	private double valor;
+	private int idMesa;
 	
-	public Pedido(int id){
+	public Pedido(int id, int idMesa){
 		itens = new ArrayList<Item>();
 		this.id = id;
+		this.idMesa = idMesa;
 	}
 
 	public Boolean getPronto() {
@@ -39,6 +41,14 @@ public class Pedido{
 
 	public int getId() {
 		return id;
+	}
+
+	public int getIdMesa() {
+		return idMesa;
+	}
+
+	public void setIdMesa(int idMesa) {
+		this.idMesa = idMesa;
 	}
 	
 	

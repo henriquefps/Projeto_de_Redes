@@ -48,7 +48,7 @@ public class Tela_AnotarPedidoController implements Initializable {
 	private Prato pratoSelecionado = null;
 	private Bebida bebidaSelecionada = null;
 
-	private String itens;
+	private String itens = "";
 	
 	@FXML
 	public void adicionarPrato() {
@@ -73,7 +73,7 @@ public class Tela_AnotarPedidoController implements Initializable {
 		
 		if (bebidaSelecionada != null) {
 			itensDoPedido.add(bebidaSelecionada);
-			itens = itens + "- " + pratoSelecionado.getNome() + "\n";
+			itens = itens + "- " + bebidaSelecionada.getNome() + "\n";
 			itensTextArea.setText(itens);
 		}
 	}
@@ -81,19 +81,21 @@ public class Tela_AnotarPedidoController implements Initializable {
 	@FXML
 	public void cancelarPedido() {
 		itensDoPedido = null;
+		ScreenManager.getMainStage().setWidth(1280);
 		ScreenManager.setScene(ScreenManager.getInstance().getTelaMenuGarcom());
 	}
 
 	@FXML
 	public void finalizarPedido() {
 		if (itensDoPedido != null && itensDoPedido.size() > 0 && Fachada.getInstance().existe(Integer.parseInt(idMesaTextField.getText()))) {
-			Pedido pedido = new Pedido(Fachada.getInstance().listarPedido().size());
+			Pedido pedido = new Pedido(Fachada.getInstance().listarPedido().size(), Integer.parseInt(idMesaTextField.getText()));
 			pedido.setItens(itensDoPedido);
 			pedido.setPronto(false);
 			Fachada.getInstance().buscarMesa(Integer.parseInt(idMesaTextField.getText())).getPedidos().add(pedido);
 			Fachada.getInstance().cadastrarPedido(pedido);
 			itensDoPedido = null;
 			itens = "";
+			ScreenManager.getMainStage().setWidth(1280);
 			ScreenManager.setScene(ScreenManager.getInstance().getTelaMenuGarcom());
 		}
 	}
@@ -150,7 +152,6 @@ public class Tela_AnotarPedidoController implements Initializable {
 	public void selecionarPrato() {
 		pratoSelecionado = pratosTableView.getSelectionModel().getSelectedItem();
 		if (pratoSelecionado != null) {
-			System.out.println(pratoSelecionado.getDescricao());
 			descricaoTextArea.setText(
 					pratoSelecionado.getDescricao() + "\nServe Pessoas: " + pratoSelecionado.getServeNPessoas());
 		}

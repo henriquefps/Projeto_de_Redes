@@ -5,6 +5,7 @@ public class Prato extends Item{
 	private String nome;
 	private String descricao;
 	private int serveNPessoas;
+	private boolean pronto;
 	
 	public Prato(int id, double valor, String nome, String descricao, int serveNPessoas){
 		super(id);
@@ -12,6 +13,7 @@ public class Prato extends Item{
 		this.nome = nome;
 		this.descricao = descricao;
 		this.serveNPessoas = serveNPessoas;
+		this.pronto = false;
 	}
 
 	public String getNome() {
@@ -36,6 +38,14 @@ public class Prato extends Item{
 
 	public void setServeNPessoas(int serveNPessoas) {
 		this.serveNPessoas = serveNPessoas;
+	}
+
+	public boolean isPronto() {
+		return pronto;
+	}
+
+	public void setPronto(boolean pronto) {
+		this.pronto = pronto;
 	}
 	
 	

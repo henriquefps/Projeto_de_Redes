@@ -7,27 +7,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SistemaDePedidos.src.usuario.Tela_Identificacao_controller.java">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.Tela_ContasPorMesaController">
    <children>
       <Label layoutX="388.0" layoutY="60.0" text="Contas Por Mesa">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
-      <Button layoutX="1091.0" layoutY="36.0" mnemonicParsing="false" text="Voltar">
+      <Button layoutX="1091.0" layoutY="36.0" mnemonicParsing="false" onAction="#voltarParaMenuGarcom" text="Voltar">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <TableView layoutX="455.0" layoutY="189.0" prefHeight="485.0" prefWidth="380.0">
+      <TableView fx:id="tabelaMesas" layoutX="455.0" layoutY="189.0" onMouseClicked="#selecionarMesa" prefHeight="485.0" prefWidth="380.0">
         <columns>
-          <TableColumn prefWidth="186.42361450195312" text="Numero da Mesa" />
-          <TableColumn prefWidth="192.5762939453125" text="Valor da Conta" />
+          <TableColumn fx:id="colunaIdMesa" prefWidth="186.42361450195312" text="Numero da Mesa" />
+          <TableColumn fx:id="colunaValorConta" prefWidth="192.5762939453125" text="Valor da Conta" />
         </columns>
       </TableView>
-      <Button layoutX="917.0" layoutY="327.0" mnemonicParsing="false" text="Finalizar Conta">
+      <Button layoutX="917.0" layoutY="327.0" mnemonicParsing="false" onAction="#finalizarConta" text="Finalizar Conta">
          <font>
             <Font size="36.0" />
+         </font>
+      </Button>
+      <Button layoutX="997.0" layoutY="482.0" mnemonicParsing="false" onAction="#adicionarMesa" text="Adicionar Mesa">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="999.0" layoutY="544.0" mnemonicParsing="false" onAction="#removerMesa" text="Remover Mesa">
+         <font>
+            <Font size="18.0" />
          </font>
       </Button>
    </children>

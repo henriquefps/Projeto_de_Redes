@@ -8,6 +8,7 @@ public class Tela_MenuGarcomController {
 		ScreenManager.setScene(ScreenManager.getInstance().getTelaContasPorMesa());
 	}
 	@FXML public void anotarPedido(){
+		ScreenManager.getMainStage().setWidth(500);
 		ScreenManager.setScene(ScreenManager.getInstance().getTelaAnotarPedido());
 	}
 	@FXML public void voltarParaLogin(){

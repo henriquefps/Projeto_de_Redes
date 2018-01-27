@@ -53,5 +53,15 @@ public class GerenciamentoItens {
 		return aux;
 	}
 	
+	public ArrayList<Prato> filtrarPratosPorPronto(ArrayList<Prato> lista, boolean is){
+		ArrayList<Prato> aux = new ArrayList<Prato>();
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i).isPronto() == is) {
+				aux.add(lista.get(i));
+			}
+		}
+		return aux;
+	}
+	
 	
 }

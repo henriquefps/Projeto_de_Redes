@@ -24,7 +24,7 @@
       <TextField fx:id="idMesaTextField" layoutX="227.0" layoutY="139.0" promptText="Número da Mesa" />
       <TextArea fx:id="itensTextArea" layoutX="270.0" layoutY="496.0" prefHeight="131.0" prefWidth="199.0" promptText="Itens" wrapText="true">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </TextArea>
       <Label layoutX="82.0" layoutY="201.0" text="Prato">
@@ -57,13 +57,13 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="pratosTableView" layoutX="29.0" layoutY="243.0" prefHeight="180.0" prefWidth="208.0">
+      <TableView fx:id="pratosTableView" layoutX="29.0" layoutY="243.0" onMouseClicked="#selecionarPrato" prefHeight="180.0" prefWidth="208.0">
         <columns>
           <TableColumn fx:id="colunaPratoNome" prefWidth="103.0" text="Nome" />
           <TableColumn fx:id="colunaPratoValor" prefWidth="104.0" text="Valor" />
         </columns>
       </TableView>
-      <TableView fx:id="bebidasTableView" layoutX="265.0" layoutY="243.0" prefHeight="180.0" prefWidth="208.0">
+      <TableView fx:id="bebidasTableView" layoutX="265.0" layoutY="243.0" onMouseClicked="#selecionarBebida" prefHeight="180.0" prefWidth="208.0">
          <columns>
             <TableColumn fx:id="colunaBebidaNome" prefWidth="100.0" text="Nome" />
             <TableColumn fx:id="colunaBebidaValor" prefWidth="107.0" text="Valor" />
@@ -71,7 +71,7 @@
       </TableView>
       <TextArea fx:id="descricaoTextArea" layoutX="34.0" layoutY="496.0" prefHeight="131.0" prefWidth="199.0" promptText="Descrição" wrapText="true">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </TextArea>
    </children>

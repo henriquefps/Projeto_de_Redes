@@ -94,6 +94,9 @@ public class Fachada {
 	public ArrayList<Bebida> listarBebidas(){
 		return itens.listarBebidas();
 	}
+	public ArrayList<Prato> filtrarPratosPorPronto(ArrayList<Prato> lista, boolean is){
+		return itens.filtrarPratosPorPronto(lista, is);
+	}
 	
 	public void cadastrarMesa(Mesa a){
 		mesas.cadastrarMesa(a);
@@ -125,5 +128,24 @@ public class Fachada {
 	
 	public ArrayList<Pedido> listarPedido(){
 		return pedidos.listarPedido();
+	}
+	
+	public ArrayList<Prato> listarPratosDosPedidosNaoProntos(){
+		return pedidos.listarPratosDosPedidosNaoProntos();
+	}
+	
+	public boolean isPedidoPronto(Pedido a){
+		return pedidos.isPedidoPronto(a);
+	}
+	
+	public String pratosToString(Pedido a){
+		return pedidos.pratosToString(a);
+	}
+	
+	public ArrayList<Pedido> listarPedidosNaoProntos(){
+		return pedidos.listarPedidosNaoProntos();
+	}
+	public double calcularConta(ArrayList<Pedido> pedidos){
+		return mesas.calcularConta(pedidos);
 	}
 }

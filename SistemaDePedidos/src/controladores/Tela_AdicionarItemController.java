@@ -32,6 +32,11 @@ public class Tela_AdicionarItemController {
 					.cadastrarPrato(new Prato(Fachada.getInstance().listarItens().size(),
 							Double.parseDouble(valorPratoTextField.getText()), nomePratoTextField.getText(),
 							descricaoPratoTextArea.getText(), Integer.parseInt(nPessoasTextField.getText())));
+			
+			nomePratoTextField.setText("");
+			descricaoPratoTextArea.setText("");
+			valorPratoTextField.setText("");
+			nPessoasTextField.setText("");
 		}
 	}
 
@@ -43,6 +48,9 @@ public class Tela_AdicionarItemController {
 					.cadastrarBebida(new Bebida(Fachada.getInstance().listarItens().size(),
 							Double.parseDouble(valorBebidaTextField.getText()), nomeBebidaTextField.getText(),
 							tamanhoBebidaTextField.getText()));
+			nomeBebidaTextField.setText("");
+			tamanhoBebidaTextField.setText("");
+			valorBebidaTextField.setText("");
 		}
 	}
 
