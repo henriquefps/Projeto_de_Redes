@@ -24,13 +24,24 @@ public class RepositorioMesas implements IRepositorioMesas{
 	
 	public void adicionarMesa(Mesa e) {
 		listaDeMesas.add(e);
+		Repositorio_Servidor.atualizarListas(false);
 	}
 	
 	public void removerMesa(Mesa e) {
 		listaDeMesas.remove(e);
+		Repositorio_Servidor.atualizarListas(false);
 	}
 	
 	public ArrayList<Mesa> getListaDeMesas(){
 		return listaDeMesas;
 	}
+
+	/**
+	 * @param listaDeMesas the listaDeMesas to set
+	 */
+	public void setListaDeMesas(ArrayList<Mesa> listaDeMesas) {
+		this.listaDeMesas = listaDeMesas;
+	}
+	
+	
 }

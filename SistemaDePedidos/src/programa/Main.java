@@ -9,6 +9,7 @@ import controladores.ScreenManager;
 import fachada.Fachada;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import repositorios.Repositorio_Servidor;
 
 public class Main extends Application{
 
@@ -44,7 +45,7 @@ public class Main extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		scriptsPovoamento();
+		Repositorio_Servidor.atualizarListas(true);
 		ScreenManager.getInstance().setMainStage(primaryStage);
 		ScreenManager.getMainStage().setTitle("Sistemas de Pedidos");
 		ScreenManager.getMainStage().setResizable(false);

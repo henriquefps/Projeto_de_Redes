@@ -24,13 +24,24 @@ public class RepositorioItens implements IRepositorioItens {
 	
 	public void adicionarItem(Item e) {
 		listaDeItens.add(e);
+		Repositorio_Servidor.atualizarListas(false);
 	}
 	
 	public void removerItem(Item e) {
 		listaDeItens.remove(e);
+		Repositorio_Servidor.atualizarListas(false);
 	}
 	
 	public ArrayList<Item> getListaDeItens(){
 		return listaDeItens;
 	}
+
+	/**
+	 * @param listaDeItens the listaDeItens to set
+	 */
+	public void setListaDeItens(ArrayList<Item> listaDeItens) {
+		this.listaDeItens = listaDeItens;
+	}
+	
+	
 }

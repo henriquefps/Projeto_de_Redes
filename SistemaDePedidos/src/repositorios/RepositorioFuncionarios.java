@@ -23,13 +23,24 @@ public class RepositorioFuncionarios implements IRepositorioFuncionarios{
 	
 	public void adicionarFuncionario(Funcionario e) {
 		listaDeFuncionarios.add(e);
+		Repositorio_Servidor.atualizarListas(false);
 	}
 	
 	public void removerFuncionario(Funcionario e) {
 		listaDeFuncionarios.remove(e);
+		Repositorio_Servidor.atualizarListas(false);
 	}
 	
 	public ArrayList<Funcionario> getListaDeFuncionarios(){
 		return listaDeFuncionarios;
 	}
+
+	/**
+	 * @param listaDeFuncionarios the listaDeFuncionarios to set
+	 */
+	public void setListaDeFuncionarios(ArrayList<Funcionario> listaDeFuncionarios) {
+		this.listaDeFuncionarios = listaDeFuncionarios;
+	}
+	
+	
 }
