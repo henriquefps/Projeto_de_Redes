@@ -16,30 +16,34 @@ public class ServidorTCP {
 
 	public static void main(String[] args) {
 		try {
-
+			//Cria um ServerSocket(Servidor) ouvindo na porta 12345	
 			ServerSocket servidor = new ServerSocket(12345);
 			System.out.println("Servidor ouvindo a porta 12345");
+			
 			while (true) {
 
-				// Trava o servidor até receber uma solicitação;
+				// Espera uma requisição
 				Socket cliente = servidor.accept();
-
 				System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
 
-				// Retorno do server
+				// Para retorna para o cliente o que foi solicitado ao servidor
 				ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
 
-				// Entrada do server
+				// Dados que estão chegando do cliente para o servidor
 				ObjectInputStream entrada = new ObjectInputStream(cliente.getInputStream());
 
 				// Atualiza as listas com as do programa
 				System.err.println("entrou");
+				
+				//Pega dados que chegaram do cliente e salva no servidor
 				RepositorioObject.getInstance().setListas((Object[]) entrada.readObject());
+				
 				// Atualiza as informações da variavel listas
 				listas = RepositorioObject.getInstance().getListas();
 
 				// Escreve a lista como saida do server
 				saida.flush();
+				//Manda para o cliente
 				saida.writeObject(listas);
 				saida.close();
 
