@@ -26,7 +26,7 @@ public class Repositorio_Servidor {
 			listas[2] = mesas.getListaDeMesas();
 			listas[3] = pedidos.getListaDePedidos();
 
-			Socket cliente = new Socket("127.0.0.1", 12345);
+			Socket cliente = new Socket("172.16.207.89", 12345);
 
 			ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
 			ObjectInputStream entrada = new ObjectInputStream(cliente.getInputStream());
@@ -45,7 +45,8 @@ public class Repositorio_Servidor {
 			entrada.close();
 			System.out.println("Conexão encerrada");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("Erro cliente: " + e.getMessage());
+			System.exit(0);
 		}
 	}
 }
